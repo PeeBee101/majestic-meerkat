@@ -1,22 +1,69 @@
 /*
-Theme Name: Bamboo Nine
+Theme Name: Majestic Meerkat
 Author: Philippe Bailey
-Author URI: https://www.bamboonine.co.uk
-Description: Bamboo Nine custom theme developed for Bamboo Nine customers.
+Author URI: https://www.majesticmeerkat.com
+Description: Majestic Meerkat custom theme developed for Meerkat customers.
 Version: 1.0
 */
 
 /* Browser Reset */
 @import "css/defaults/browserReset.css";
 
-/* Style Guide */
-@import "css/defaults/styleGuide.css";
-
-/* Image and text block Stylesheet */
-@import "css/blocks/image-and-text.css";
-
 /* Image and text header block stylesheet */
-@import "css/blocks/image-and-text-header.css";
+@import "css/blocks/homepage-header.css";
+
+h1 {
+    font-family: "Lilita One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 90px;
+}
+
+p {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;     
+}
+
+header {
+    background-color: #000;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0px;
+}
+
+header .menu ul li {
+    display: inline-block;
+}
+
+header .menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0px 10px;
+}
+
+main {
+    margin-top: 60px;
+}
+
+.button-box .red-btn {
+    padding: 15px 20px;
+    background-color: #fa4231;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.button-box .blue-btn {
+    padding: 15px 20px;
+    background-color: #31a1fa;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+}
 
 /* Aspect Ratio Images */
 .img-responsive {

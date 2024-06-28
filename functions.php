@@ -16,8 +16,5 @@ require_once('functions/acf.php');
 // Custom image sizes
 require_once('functions/setup.php');
 
-// Author bio
-require_once('functions/author-bio.php');
-
 // Gutenberg customisation -- NOT CURRENTLY USED --
 //require_once('functions/gutenberg.php');
