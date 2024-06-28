@@ -1,0 +1,31 @@
+/*
+Theme Name: Bamboo Nine
+Author: Philippe Bailey
+Author URI: https://www.bamboonine.co.uk
+Description: Bamboo Nine custom theme developed for Bamboo Nine customers.
+Version: 1.0
+*/
+
+/* Browser Reset */
+@import "css/defaults/browserReset.css";
+
+/* Style Guide */
+@import "css/defaults/styleGuide.css";
+
+/* Image and text block Stylesheet */
+@import "css/blocks/image-and-text.css";
+
+/* Image and text header block stylesheet */
+@import "css/blocks/image-and-text-header.css";
+
+/* Aspect Ratio Images */
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* All Sections Spacing */
+section {
+    padding: var(--containerSpacing) 0px;
+}

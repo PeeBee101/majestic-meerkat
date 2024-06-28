@@ -1,0 +1,25 @@
+.image-and-text .small-container {
+    display: flex;
+    gap: var(--containerSpacing);
+}
+
+.image-text-img img {
+    border-radius: 8px;
+    object-fit: cover;
+    height: 100%;
+}
+
+.image-text-img {
+    flex: 1;
+}
+
+.image-text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.image-text-content p {
+    margin-bottom: var(--contentSpacing);
+}
