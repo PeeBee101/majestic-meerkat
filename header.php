@@ -4,6 +4,16 @@
 <meta name="viewport" content="width=device-width" />
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <?php wp_head(); ?>
+<!-- Favicon Images -->
+<link rel="apple-touch-icon" sizes="180x180" href="\wp-content\themes\majesticMeerkat\assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="\wp-content\themes\majesticMeerkat\assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="\wp-content\themes\majesticMeerkat\assets/favicon-16x16.png">
+<link rel="manifest" href="\wp-content\themes\majesticMeerkat\assets/site.webmanifest">
+<link rel="mask-icon" href="\wp-content\themes\majesticMeerkat\assets/safari-pinned-tab.svg" color="#323339">
+<link rel="shortcut icon" href="\wp-content\themes\majesticMeerkat\assets/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content="\wp-content\themes\majesticMeerkat\assets/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
 <!-- Playwrite Google Font -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,9 +25,15 @@
 
 <header>
     <div class="logo">
-        <img src="" />
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/majestic-meerkat-logo.webp" alt="Majestic Meerkat Logo"/>
     </div>
-    <div class="menu">
-        <?php wp_nav_menu(); ?>
-    </div>
+    <nav class="menu" role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <?php wp_nav_menu(array('menu' => 'main_menu', 'menu_id' => 'menu', 'container' => false)); ?>
+        </div>
+    </nav>
 </header>
