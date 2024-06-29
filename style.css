@@ -17,6 +17,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 400;
     font-style: normal;
     text-transform: uppercase;
+    color: var(--meerkatBrown);
 }
 
 h1 {
@@ -47,12 +48,15 @@ p, li, a, span {
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
+    line-height: 22px;
     font-weight: normal;
-    font-style: normal;     
+    font-style: normal;
+    color: var(--meerkatBlack);
+    margin-bottom: var(--spacing);
 }
 
 header {
-    background-color: #323339;
+    background-color: var(--meerkatBlack);
     position: fixed;
     width: 100%;
     height: 60px;
@@ -62,7 +66,7 @@ header {
 header .logo {
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: 24px;
 }
 
 header .logo img {
@@ -81,7 +85,7 @@ header .menu ul li {
 }
 
 header .menu ul li a {
-    color: #fff;
+    color: var(--meerkatBrown);
     text-decoration: none;
     padding: 20px 10px;
     display: block;
@@ -93,18 +97,25 @@ main {
 
 .button-box .red-btn {
     padding: 15px 20px;
-    background-color: #fa4231;
+    background-color: var(--meerkatPink);
     border-radius: 8px;
-    color: #fff;
+    color: var(--meerkatWhite);
     text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
 }
 
 .button-box .blue-btn {
     padding: 15px 20px;
-    background-color: #31a1fa;
+    background-color: var(--meerkatBlue);
     border-radius: 8px;
-    color: #fff;
+    color: var(--meerkatWhite);
     text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    width: 150px;
+    margin-right: var(--spacing);
 }
 
 #menuToggle input, #menuToggle span {
@@ -126,11 +137,11 @@ main {
     }
     #menuToggle a {
         text-decoration: none;
-        color: #232323;
+        color: var(--meerkatBlack);
         transition: color 0.3s ease;
     }
     #menuToggle a:hover {
-        color: tomato;
+        color: var(--meerkatCyan);
     }
     #menuToggle input {
         display: block;
@@ -150,7 +161,7 @@ main {
         height: 4px;
         margin-bottom: 5px;
         position: relative;
-        background: #cdcdcd;
+        background: var(--meerkatWhite);
         border-radius: 3px;
         z-index: 1;
         transform-origin: 4px 0px;
@@ -165,7 +176,7 @@ main {
     #menuToggle input:checked ~ span {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px);
-        background: #232323;
+        background: var(--meerkatBlack);
     }
     #menuToggle input:checked ~ span:nth-last-child(3) {
         opacity: 0;
@@ -180,7 +191,7 @@ main {
         margin: -100px 0 0 -50px;
         padding: 50px;
         padding-top: 125px;
-        background: #ededed;
+        background: var(--meerkatWhite);
         list-style-type: none;
         -webkit-font-smoothing: antialiased;
         transform-origin: 0% 0%;
@@ -195,6 +206,17 @@ main {
     }
 }
 
+/* Variables */
+:root {
+    --meerkatBlack: #323339;
+    --meerkatWhite: #ededed;
+    --meerkatPink: #D1345B;
+    --meerkatBrown: #d5a560;
+    --meerkatCyan: #34D1BF;
+    --meerkatBlue: #3454D1;
+    --spacing: 24px;
+}
+
 /* Aspect Ratio Images */
 .img-responsive {
     display: block;
@@ -204,5 +226,18 @@ main {
 
 /* All Sections Spacing */
 section {
-    padding: var(--containerSpacing) 0px;
+    padding: var(--spacing) 0px;
+}
+
+/* Container and padding sizes */
+.full-container {
+    width: 100%;
+    margin: auto;
+    padding: 0px var(--spacing);
+}
+
+.content-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0px var(--spacing);
 }

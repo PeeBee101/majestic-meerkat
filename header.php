@@ -23,7 +23,7 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
-<header>
+<header class="full-container">
     <div class="logo">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/majestic-meerkat-logo.webp" alt="Majestic Meerkat Logo"/>
     </div>
