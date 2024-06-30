@@ -25,15 +25,14 @@
 
 <header class="full-container">
     <div class="logo">
-        <img src="<?php echo get_template_directory_uri(); ?>/assets/majestic-meerkat-logo.webp" alt="Majestic Meerkat Logo"/>
+        <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/majestic-meerkat-logo-sprite.webp" alt="Majestic Meerkat Logo"/></a>
     </div>
-    <nav class="menu" role="navigation">
-        <div id="menuToggle">
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            <?php wp_nav_menu(array('menu' => 'main_menu', 'menu_id' => 'menu', 'container' => false)); ?>
-        </div>
+    <nav role="navigation">
+        <button class="hamburger hamburger--elastic" type="button">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+        <?php wp_nav_menu(array('menu' => 'main_menu', 'menu_class' => 'menu is-hidden', 'menu_id' => 'menu', 'container' => false)); ?>
     </nav>
 </header>
