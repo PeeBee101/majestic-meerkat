@@ -4,8 +4,8 @@ if( have_rows('page_builder') ) {
      // loop through the rows of data
     while ( have_rows('page_builder') ) {
         the_row();
-        if (get_row_layout() == 'Image And Text') {
-            get_template_part('blocks/image-and-text');
+        if (get_row_layout() == 'service_block') {
+            get_template_part('blocks/service-block');
         }
     }
 

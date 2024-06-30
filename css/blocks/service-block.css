@@ -1,0 +1,25 @@
+.services-container {
+    display: flex;
+    gap: var(--spacing);
+}
+
+.service-block {
+    flex: 1;
+}
+
+.service-block a {
+    text-decoration: none;
+}
+
+.service-block a:hover {
+    opacity: 0.7;
+}
+
+.service-block a h2 {
+    line-height: normal;
+    text-decoration: none;
+}
+
+.service-block h2 {
+    text-align: center;
+}
