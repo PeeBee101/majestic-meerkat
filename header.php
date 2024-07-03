@@ -24,10 +24,12 @@
 <?php wp_body_open(); ?>
 
 <header class="full-container">
-    <div class="logo">
-        <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/majestic-meerkat-logo-sprite.webp" alt="Majestic Meerkat Logo"/></a>
+    <div class="logo-block">
+        <div class="logo">
+            <a href=""><img src="<?php echo get_template_directory_uri(); ?>/assets/majestic-meerkat-logo-sprite.webp" alt="Majestic Meerkat Logo"/></a>
+        </div>
     </div>
-    <nav role="navigation">
+    <nav class="menu-block" role="navigation">
         <button class="hamburger hamburger--elastic" type="button">
             <span class="hamburger-box">
                 <span class="hamburger-inner"></span>
