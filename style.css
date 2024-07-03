@@ -65,21 +65,87 @@ header {
     height: 60px;
     top: var(--spacing);
     display: flex;
+    justify-content: space-between;
     max-width: 1920px;
     z-index: 100;
+    overflow: hidden;
 }
 
 header .logo-block {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
-    box-shadow: 0 4px 0 var(--meerkatOrange) inset, 0px -4px 0 var(--meerkatOrange) inset, 4px 0 0 var(--meerkatOrange) inset;
+    box-shadow: 0 4px 0 var(--meerkatOrange) inset, 
+                0 -4px 0 var(--meerkatOrange) inset, 
+                4px 0 0 var(--meerkatOrange) inset;
+    transition: flex 0.25s ease-in-out;
+    text-align: left;
 }
 
 header .menu-block {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
-    box-shadow: 0 4px 0 var(--meerkatOrange) inset, 0px -4px 0 var(--meerkatOrange) inset, -4px 0 0 var(--meerkatOrange) inset;
+    box-shadow: 0 4px 0 var(--meerkatOrange) inset, 
+                0 -4px 0 var(--meerkatOrange) inset, 
+                -4px 0 0 var(--meerkatOrange) inset;
+    transition: flex 0.25s ease-in-out;
     text-align: right;
+}
+
+body.open-menu .logo-block {
+    z-index: 100;
+}
+
+body.open-menu nav.menu-block {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 50;
+    background: linear-gradient(90deg, rgba(50,51,57,1) 0%, rgba(50,51,57,1) 50%, rgba(50,51,57,0) 100%);
+    box-shadow: none;
+    border-radius: 0px;
+}
+
+.logo-block.scrolled {
+    flex: none;
+    box-shadow: 0 4px 0 var(--meerkatOrange) inset, 
+                0 -4px 0 var(--meerkatOrange) inset, 
+                4px 0 0 var(--meerkatOrange) inset,
+                -4px 0 0 var(--meerkatOrange) inset;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.menu-block.scrolled {
+    flex: none;
+    box-shadow: 0 4px 0 var(--meerkatOrange) inset, 
+                0 -4px 0 var(--meerkatOrange) inset, 
+                4px 0 0 var(--meerkatOrange) inset,
+                -4px 0 0 var(--meerkatOrange) inset;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.menu-block.scrolled .hamburger {
+    display: block;
+    margin: 0px 8px;
+}
+
+.menu-block.delayShow .menu {
+    display: block;
+}
+
+.menu-block.scrolled .menu {
+    display: none;
+}
+
+nav.menu-block.scrolled {
+    flex: none;
+}
+
+.logo-block.scrolled .logo {
+    margin-right: 14px;
 }
 
 .logo-block, .menu-block {
@@ -95,6 +161,10 @@ header .menu-block {
     border-radius: 50px;
     margin-left: 14px;
     margin-top: 4px;
+}
+
+.logo a {
+    display: block;
 }
 
 .logo img {
@@ -118,14 +188,16 @@ header .menu-block {
 
 .menu li {
     display: inline-block;
+    margin: 0px;
 }
 
 .menu li a {
     color: var(--meerkatWhite);
     text-decoration: none;
-    padding: 20px 10px;
+    padding: 19px 10px;
     display: block;
     font-weight: bold;
+    margin: 0px;
 }
 
 .menu li a:hover {
@@ -231,12 +303,32 @@ header .menu-block {
     transition-delay: 0.075s;
 }
 
-html.is-hidden, body.is-hidden {
-    overflow: hidden;
+body.open-menu .menu {
+    right: -100%;
 }
 
-.menu.is-hidden {
-    right: -100%;
+body.open-menu .hamburger {
+    position: absolute;
+    top: 24px;
+    right: 48px;
+}
+
+body.open-menu .menu-block .menu {
+    display: block;
+    width: 50%;
+    height: 100%;
+    padding: 10% 0px 10% 10%;
+}
+
+body.open-menu .menu-block .menu li {
+    display: block;
+}
+
+body.open-menu .menu-block .menu li a {
+    text-align: left;
+    font-size: 60px;
+    line-height: normal;
+    padding: 5px;
 }
 
 .button-box .red-btn {
@@ -288,7 +380,6 @@ section {
 
 /* Container and padding sizes */
 .full-container {
-    width: 100%;
     margin: auto var(--spacing);
     padding: 0px var(--spacing);
 }
@@ -297,35 +388,4 @@ section {
     max-width: 1600px;
     margin: auto;
     padding: 0px var(--spacing);
-}
-
-@media (max-width: 767px) {
-    .hamburger {
-        display: block;
-    }
-    .menu {
-        position: absolute;
-        top: 60px;
-        right: 0%;
-        width: 100%;
-        height: calc(100vh - 60px);
-        background-color: var(--meerkatBlack);
-        transition: right 0.25s ease-in-out;
-    }
-    .menu ul {
-        margin: var(--spacing) 0px;
-    }
-    .menu ul li {
-        display: block;
-        font-size: 40px;
-        margin: 0px;
-    }
-    .menu ul li a {
-        padding: var(--spacing);
-        color: var(--meerkatOrange);
-        font-size: 40px;
-        font-weight: bold;
-        line-height: normal;
-        margin: 0px;
-    }
 }
